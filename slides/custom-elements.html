@@ -1,3 +1,19 @@
 <h2>Custom Elements</h2>
 
-<p>Please change me!</p>
+<p>The specification describes the method for enabling the author to define and use new types of DOM elements in a document.</p>
+<p>
+    <a href="http://webcomponents.org/articles/introduction-to-custom-elements/" target="_blank">Custom elements article</a>
+</p>
+
+<pre>
+    <code class="html">
+    &lt;x-component&gt;&lt;/x-component&gt;
+    &lt;script&gt;
+    var XComponent = document.registerElement(&#39;x-component&#39;);
+
+    //And you may create on the fly
+    var dom = new XComponent();
+    document.body.appendChild(dom);
+    &lt;/script&gt;
+    </code>
+</pre>

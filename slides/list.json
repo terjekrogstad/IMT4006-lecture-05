@@ -60,6 +60,7 @@
         "custom-elements.html",
         "html-imports.html",
         "templates.html",
+        "templates-ii.html",
         "shadow-dom.html",
         "web-components-with-polymer.html",
         "web-components-example.html"
@@ -67,6 +68,7 @@
     [
         "multimedia-and-graphics.html",
         "weve-already-talked-about-video-and-audio.html",
+        "html5-canvas.html",
         "canvas-contexts.html",
         "canvas-panting.html",
         "canvas-and-images.html",

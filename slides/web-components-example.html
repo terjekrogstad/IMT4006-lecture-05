@@ -1,3 +1,45 @@
 <h2>Web Components Example</h2>
 
-<p>Please change me!</p>
+<pre>
+    <code class="html">
+&lt;template id=&quot;template&quot;&gt;
+  &lt;style&gt;
+    ...
+  &lt;/style&gt;
+  &lt;div id=&quot;container&quot;&gt;
+    &lt;img class=&quot;webcomponents&quot; src=&quot;http://webcomponents.org/img/logo.svg&quot;&gt;
+    &lt;content select=&quot;h1&quot;&gt;&lt;/content&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  // This element will be registered to index.html
+  // Because `document` here means the one in index.html
+  var XComponent = document.registerElement(&#39;x-component&#39;, {
+    prototype: Object.create(HTMLElement.prototype, {
+      createdCallback: {
+        value: function() {
+          var root = this.createShadowRoot();
+          var template = document.querySelector(&#39;#template&#39;);
+          var clone = document.importNode(template.content, true);
+          root.appendChild(clone);
+        }
+      }
+    })
+  });
+&lt;/script&gt;
+
+
+
+
+
+//Index.html
+...
+  &lt;link rel=&quot;import&quot; href=&quot;x-component.html&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;x-component&gt;
+    &lt;h1&gt;This is Custom Element&lt;/h1&gt;
+  &lt;/x-component&gt;
+  ...
+    </code>
+</pre>

@@ -1,0 +1,26 @@
+<h2>Templates II</h2>
+
+<pre class="fragment roll-in">
+    With standardized templates
+    <code class="html">
+&lt;template id=&quot;template&quot;&gt;
+  &lt;style&gt;
+    ...
+  &lt;/style&gt;
+  &lt;div&gt;
+    &lt;h1&gt;Web Components&lt;/h1&gt;
+    &lt;img src=&quot;http://webcomponents.org/img/logo.svg&quot;&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+    </code>
+</pre>
+
+<pre class="fragment roll-in">
+    And use the template in javascript
+    <code class="javascript">
+  var template = document.querySelector('#template');
+  var clone = document.importNode(template.content, true);
+  var host = document.querySelector('#host');
+  host.appendChild(clone);
+    </code>
+</pre>

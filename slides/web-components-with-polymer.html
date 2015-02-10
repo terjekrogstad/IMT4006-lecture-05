@@ -1,3 +1,32 @@
 <h2>Web Components With Polymer</h2>
 
-<p>Please change me!</p>
+<p><a href="https://www.polymer-project.org/" target="_blank">The Polymer project</a> facilitates making web components with polyfills today! There are already several pre-made components available in the framework</p>
+
+<pre>
+    Web components with Polymer
+    <code class="html">
+&lt;!-- Define element --&gt;
+&lt;polymer-element name=&quot;my-counter&quot; attributes=&quot;counter&quot;&gt;
+  &lt;template&gt;
+    &lt;style&gt; /*...*/ &lt;/style&gt;
+    &lt;div id=&quot;label&quot;&gt;&lt;content&gt;&lt;/content&gt;&lt;/div&gt;
+    Value: &lt;span id=&quot;counterVal&quot;&gt;{{counter}}&lt;/span&gt;&lt;br&gt;
+    &lt;button on-tap=&quot;{{increment}}&quot;&gt;Increment&lt;/button&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+    Polymer({
+      counter: 0, // Default value
+      counterChanged: function() {
+        this.$.counterVal.classList.add(&#39;highlight&#39;);
+      },
+      increment: function() {
+        this.counter++;
+      }
+    });
+  &lt;/script&gt;
+&lt;/polymer-element&gt;
+
+&lt;!-- Use element --&gt;
+&lt;my-counter counter=&quot;10&quot;&gt;Points&lt;/my-counter&gt;
+    </code>
+</pre>

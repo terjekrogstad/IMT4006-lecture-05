@@ -1,3 +1,31 @@
 <h2>Canvas Animation Example</h2>
 
-<p>Please change me!</p>
+<pre>
+    <code class="javascript">
+    var canvas = document.getElementById( 'myCanvas' ),
+    ctx = canvas.getContext( '2d' );
+
+    var x = 0;
+
+    var render = function(){
+        //Force rerender
+        canvas.height = canvas.height;
+
+        //Increment x position of object
+        x++;
+
+        //Draw rectangle and look at it move. Nice!
+        ctx.fillStyle='#FF0000';
+        ctx.fillRect( x, 100, 10, 10 );
+    };
+
+    setInterval( render, 1000/24 );
+
+
+
+    </code>
+</pre>
+
+<p class="fragment roll-in">
+    Live coding example?
+</p>
