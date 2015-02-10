@@ -1,0 +1,16 @@
+<h2>WebRTC Example</h2>
+
+<pre>
+    <code class="js">
+    var video = document.getElementById( 'myVideo' );
+    navigator.getUserMedia =
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia;
+    navigator.getUserMedia({video: true, audio: false}, function(stream) {
+        //Set up stream locally
+        var localStream = window.URL.createObjectURL( stream );
+        video.src = localStream;
+        video.play();
+    }
+</pre>

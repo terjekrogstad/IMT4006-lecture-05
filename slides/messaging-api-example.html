@@ -1,0 +1,20 @@
+<h2>Messaging API example</h2>
+
+<p>postMessage iframe across domains</p>
+<pre class="fragment roll-in">
+    <code class="javascript">
+    var iframe = document.getElementById(“myIframe”);
+    iframe.contentWindow.postMessage( 'Hello frame', 'http://mydomain.no');
+    </code>
+</pre>
+
+<p class="fragment roll-in">To receive messages an event listener must be implemented</p>
+<pre class="fragment roll-in">
+    <code>
+    window.addEventListener( 'message',
+        function(event){
+            //Handler function
+        }, false
+    );
+    </code>
+</pre>

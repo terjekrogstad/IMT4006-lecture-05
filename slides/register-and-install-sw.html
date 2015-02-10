@@ -1,0 +1,27 @@
+<h2>Register and install SW</h2>
+
+<p>Remember: Service Worker scripts must be served over HTTPS</p>
+
+<pre class="fragment roll-in">
+    Register a Service Worker script
+    <code class="javascript">
+    navigator.serviceWorker.register( '/sw.js' ).then(
+      function( registration ) {
+        // Registration was successful
+      }).catch( function( err ) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+    </code>
+</pre>
+
+<pre class="fragment roll-in">
+  In the Service Worker script. Listen to install event.
+  <code class="javascript">
+    // Set the callback for the install step
+    self.addEventListener('install', function(event) {
+        // Perform install steps
+    });
+  </code>
+</pre>
