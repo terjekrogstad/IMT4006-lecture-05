@@ -1,0 +1,18 @@
+<h2>Creating a Web Worker</h2>
+
+<pre>
+    <code class="javascript">
+    //main.js
+    if( 'Worker' in window ){
+        var worker = new Worker( 'worker.js' );
+    }
+
+
+
+
+    //worker.js
+    self.addEventListener( 'message', function( e ){
+        //Do cool rad stuff based on message received
+    });
+    </code>
+</pre>

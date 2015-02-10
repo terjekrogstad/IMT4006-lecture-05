@@ -1,0 +1,31 @@
+<h2>Server Sent Events Example</h2>
+
+<pre>
+    Server stream.php
+    <code class="php">
+    header('Content-Type: text/event-stream');
+    header('Cache-Control: no-cache'); 
+    
+    //Constructs the SSE data format and flushes that data to the client.
+    function sendMsg($id, $msg) {
+        echo "id: $id" . PHP_EOL; echo "data: $msg" . PHP_EOL; echo PHP_EOL;
+    }
+    sendMsg( time(), 'server time: ' . date("h:i:s", time() ) );
+    </code>
+</pre>
+
+<pre class="fragment roll-in">
+    Client
+    <code class="javascript">
+    var source = new EventSource( 'stream.php' );
+    source.onmessage = function( e ){
+        console.log( e.data );
+    }
+    source.onopen = function( e ){ };
+    source.onerror = function( e ){
+        if( e.readyState == EventSource.CLOSED ){
+            console.log( 'Connection closed' );
+        }
+    }
+    </code>
+</pre>

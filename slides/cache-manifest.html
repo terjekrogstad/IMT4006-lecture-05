@@ -1,0 +1,27 @@
+<h2>The Offline Application Cache</h2>
+
+<ul>
+   <li>Stored in the app directory</li>
+   <li>Must include a "file header": CACHE MANIFEST</li>
+   <li>HTTP content type text/cache-manifest</li>
+   <li>Must list all files required by the app</li>
+</ul>
+
+<pre class="fragment roll-in">
+    Anatomy of Manifest file
+    <code>
+    CACHE MANIFEST
+    index.html
+    images/icon.jpg
+    scripts/myscripts.js
+    styles/mystyle.css
+
+    FALLBACK:
+    images/ images/offline.jpg
+    
+    NETWORK:
+    *
+    
+    #most recent update 31.01.2012 20:50:24
+    </code>
+</pre>

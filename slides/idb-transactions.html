@@ -1,0 +1,21 @@
+<h2>IDB Transactions</h2>
+
+<p>Currently IndexedDBs are asynchronous: onerror() and onsuccess() callbacks called when requested operation is completed</p>
+<p>Transactions are short lived - Entering browser event loop will implicitly end the
+transaction</p>
+
+<pre>
+    <code class="javascript">
+    const messages = [
+        { sender: "+47112233", TimeStamp: "2013-01-23T22:20+01:00", text: "How are you?" },
+        { sender: "+47112233", TimeStamp: "2013-01-23T22:21+01:00", text: "I'm quite fine ;-)" }
+    ];
+    
+    var READ_WRITE = window.IDBTransaction.READ_WRITE;
+    transaction = db.transaction([objectStoreName], READ_WRITE);
+    store = transaction.objectStore(objectStoreName);
+    for (i in messages) {
+        request = store.add(messages[i]);
+    }
+    </code>
+</pre>

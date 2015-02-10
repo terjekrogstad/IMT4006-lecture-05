@@ -1,0 +1,21 @@
+<h2>Indexed DB Example</h2>
+<pre>
+    Creating an object store
+    <code class="javascript">
+    request = indexedDB.open(databaseName);
+    request.onerror = function(event) {
+        alert("Something failed: " + event.target.message);
+    };
+    request.onsuccess = function(event) {
+        db = event.target.result;
+        if (model.version != db.version) {
+            verRequest = db.setVersion(version);
+            verRequest.onsuccess = function(event) {
+                store = db.createObjectStore(objectStoreName, { keyPath: "msgId", autoIncrement: true });
+                store.createIndex("sender", "sender", {unique: false});
+                store.createIndex("TimeStamp", "TimeStamp", {unique: false});
+            };
+        }
+    };
+    </code>
+</pre>

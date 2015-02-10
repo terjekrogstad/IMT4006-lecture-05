@@ -1,0 +1,17 @@
+<h2>Cache and Return Requests</h2>
+<pre>
+    Cache files
+    <code class="javascript">
+    var CACHE_NAME = 'my-site-cache-v1', urlsToCache = [ '/index.html', '/styles/main.css', '/script/main.js' ];
+
+    self.addEventListener('install', function(event) {
+      // Perform install steps
+      event.waitUntil(
+        caches.open(CACHE_NAME)
+        .then(function(cache) {
+          return cache.addAll(urlsToCache);
+        })
+      );
+    });
+    </code>
+</pre>
